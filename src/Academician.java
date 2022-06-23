@@ -1,6 +1,6 @@
 package src;
 
-public class Academician extends Employee {
+public abstract class Academician extends Employee {
     private String department;
     private String title;
     public Academician(String nameSurname,String telephone ,String email, String department, String title){
@@ -21,7 +21,9 @@ public class Academician extends Employee {
     public void setTitle(String title){
         this.title = title;
     }
-    public void classEntry(){
-        System.out.println(this.getNameSurname()+ " derse giriş yaptı.");
+    public abstract void classEntry(String classTime);
+    @Override
+    public void entry(){
+        System.out.println(this.getNameSurname()+ "akademisyen a kapısından çıkış yaptı");
     }
 }
